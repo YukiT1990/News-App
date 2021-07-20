@@ -1,8 +1,11 @@
 import router from 'next/router';
 import { Toolbar } from '../../components/toolbar';
 import styles from '../../styles/feed.module.css'
+import Image from 'next/image'
 
 export const Feed = ({ pageNumber, articles }) => {
+
+  console.log("articles: " + JSON.stringify(articles, null, 2));
 
   return (
     <div className='page-container'>
@@ -12,7 +15,8 @@ export const Feed = ({ pageNumber, articles }) => {
           <div key={index} className={styles.post}>
             <h1 onClick={() => (window.location.href = article.url)}>{article.title}</h1>
             <p>{article.description}</p>
-            {!!article.urlToImage && <img src={article.urlToImage} />}
+            {/* {!!article.urlToImage && <img src={article.urlToImage} alt={article.title} />} */}
+            {!!article.urlToImage && <Image className={styles.img} src={article.urlToImage} width={500} height={350} />}
           </div>
         ))}
       </div>
@@ -52,25 +56,7 @@ export const getServerSideProps = async pageContext => {
 
   const pageNumber = pageContext.query.slug;
 
-  // this does not work
-  // if (!pageNumber || pageNumber < 1 || pageNumber > 5) {
-  //   return {
-  //     props: {
-  //       articles: [],
-  //       pageNumber: 1,
-  //     }
-  //   }
-  // }
-
   const apiResponse = await fetch(
-
-    // this does not work
-    // `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&page=${pageNumber}`,
-    // {
-    //   heaaders: {
-    //     Authorization: `Bearer ${process.env.NEXT_PUBLIC_NEWS_KEY}`,
-    //   },
-    // },
 
     `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&pageSize=5&page=${pageNumber}`,
     {

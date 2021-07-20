@@ -3,7 +3,7 @@ import { Toolbar } from '../components/toolbar';
 import styles from '../styles/EOM.module.css';
 
 export const EOM = ({ employee }) => {
-  console.log(employee);
+
   return (
     <div className='page-container'>
       <Toolbar />
@@ -13,7 +13,10 @@ export const EOM = ({ employee }) => {
         <div className={styles.employeeOfTheMonth}>
           <h3>{employee.name}</h3>
           <h6>{employee.position}</h6>
-          <img src={employee.image} />
+          {/* <img src={employee.image} /> */}
+          <div className={styles.img}>
+            <Image src='/employee.jpg' alt="employee picture" width={500} height={500} />
+          </div>
           <p>{employee.description}</p>
         </div>
       </div>
