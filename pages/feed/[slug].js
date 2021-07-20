@@ -16,7 +16,7 @@ export const Feed = ({ pageNumber, articles }) => {
             <h1 onClick={() => (window.location.href = article.url)}>{article.title}</h1>
             <p>{article.description}</p>
             {/* {!!article.urlToImage && <img src={article.urlToImage} alt={article.title} />} */}
-            {!!article.urlToImage && <Image className={styles.img} src={article.urlToImage} width={500} height={350} />}
+            {!!article.urlToImage && <Image className={styles.img} src={article.urlToImage} alt={article.title} width={500} height={350} />}
           </div>
         ))}
       </div>

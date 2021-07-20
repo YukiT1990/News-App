@@ -1,6 +1,27 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['www.washingtonpost.com', 'media-cldnry.s-nbcnews.com', 'cdn.mos.cms.futurecdn.net', 'imagesvc.meredithcorp.io'],
+    domains: [
+      'www.washingtonpost.com',
+      'media-cldnry.s-nbcnews.com',
+      'cdn.mos.cms.futurecdn.net',
+      'imagesvc.meredithcorp.io',
+      'www.investors.com',
+      'cdn.cnn.com',
+      'www.hollywoodreporter.com',
+      'cdn.vox-cdn.com',
+      'steelersdepot.com',
+      'static.timesofisrael.com',
+      'i.insider.com',
+      'static.foxnews.com',
+      's.hdnux.com',
+      'keyt.b-cdn.net',
+      'media.npr.org',
+      'assets2.rockpapershotgun.com',
+      'akns-images.eonline.com',
+      'static.politico.com',
+      'static01.nyt.com',
+      'compote.slate.com',
+    ],
   },
 }
